@@ -21,9 +21,9 @@ public:
     const string& get_text() {
         return msg;
     }
-    bool operator <(const Message& m2)
+    bool operator <(const Message& m2) // overloading < operator to assist in sorting in fix_order function
     {
-        if(cur_id<m2.cur_id)
+        if(cur_id<m2.cur_id) //current message is new
         {
             return true;
         }
@@ -40,7 +40,7 @@ public:
         
     }
     Message create_message(const string& text) {
-        Message m = Message(text);        
+        Message m = Message(text);   //creating message object to store value of message     
         return m;
     }
 };
